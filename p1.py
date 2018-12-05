@@ -77,8 +77,8 @@ def save_sentences(texts, file_name, language='english'):
                 s15 = re.sub(r'^(\S+)$', '', s22, flags=re.MULTILINE)
                 s30 = re.sub(r'^[0-9]*(\s+[0-9]*[a-zA-Z]?)*$', '', s15, flags=re.MULTILINE)
                 s3 = re.sub(r'^[0-9]*[\.,\/]*[0-9]+$', '', s30, flags=re.MULTILINE)
-                s4 = re.sub(r'^[0-9]*([\.,-\/\s]*[0-9]+\.*\)*)*$', '', s3, flags=re.MULTILINE)
-                s55 = re.sub(r'^(\S\s)*\S$', '', s4, flags=re.MULTILINE)
+                # s4 = re.sub(r'^[0-9]*([\.,-\/\s]*[0-9]+\.*\)*)*$', '', s3, flags=re.MULTILINE)
+                s55 = re.sub(r'^(\S\s)*\S$', '', s3, flags=re.MULTILINE)
                 s5 = re.sub(r'/((\r\n|\n|\r)$)|(^(\r\n|\n|\r))|^\s*$/gm', '', s55, flags=re.MULTILINE)
                 s6 = re.sub("[\\n]{2,}", '\\n', s5, flags=re.MULTILINE)
                 s66 = re.sub("[\s]{2,}", ' ', s6, flags=re.MULTILINE)
@@ -86,6 +86,7 @@ def save_sentences(texts, file_name, language='english'):
                     if len(s66) > 1:
                         file.write(s66 + "\n")
     file.close()
+    print("finished saving to file")
 
 
 all_texts = []
@@ -97,12 +98,12 @@ all_texts = []
 # hr_texts = get_texts(hr_main_url, 'hr_reanultkadj.txt', False)
 # save_sentences(hr_texts, "output\hr_instr1.txt")
 #
-english_main_url = r"C:\\Users\\DK\\Downloads\\2012-citroen-c-crosser-103071.pdf"
-english_texts = get_texts(english_main_url, 'en_citrcrosser.txt', False)
-save_sentences(english_texts, "output\en_instr2.txt")
-hr_main_url = r"C:\\Users\\DK\\Downloads\\2012-citroen-c-crosser-107376.pdf"
-hr_texts = get_texts(hr_main_url, 'hr_citrcrosser.txt', False)
-save_sentences(hr_texts, "output\hr_instr2.txt")
+# english_main_url = r"C:\\Users\\DK\\Downloads\\2012-citroen-c-crosser-103071.pdf"
+# english_texts = get_texts(english_main_url, 'en_citrcrosser.txt', False)
+# save_sentences(english_texts, "output\en_instr2.txt")
+# hr_main_url = r"C:\\Users\\DK\\Downloads\\2012-citroen-c-crosser-107376.pdf"
+# hr_texts = get_texts(hr_main_url, 'hr_citrcrosser.txt', False)
+# save_sentences(hr_texts, "output\hr_instr2.txt")
 
 
 
@@ -202,3 +203,108 @@ save_sentences(hr_texts, "output\hr_instr2.txt")
 # english_main_url = 'https://ws.skoda-auto.com/OwnersManualService/Data/en/Superb_3U/05-2007/Manual/Superb/B5_Superb_OwnersManual.pdf'
 # english_texts = get_texts(english_main_url, 'en2.txt')
 # save_sentences(english_texts, "output\en_instr14.txt")
+
+# hr_main_url = r'C:\Users\DK\Downloads\2017-opel-adam-109334.pdf'
+# hr_texts = get_texts(hr_main_url, 'hradam.txt', False)
+# save_sentences(hr_texts, "output\hr_instr15.txt")
+# english_main_url = r'C:\Users\DK\Downloads\2017-opel-adam-93498.pdf'
+# english_texts = get_texts(english_main_url, 'enadam.txt', False)
+# save_sentences(english_texts, "output\en_instr15.txt")
+
+# hr_main_url = r'C:\Users\DK\Downloads\109355.pdf'
+# hr_texts = get_texts(hr_main_url, 'hrcascada.txt', False)
+# save_sentences(hr_texts, "output\hr_instr16.txt")
+# english_main_url = r'C:\Users\DK\Downloads\2016-opel-cascada-93560.pdf'
+# english_texts = get_texts(english_main_url, 'encascada.txt', False)
+# save_sentences(english_texts, "output\en_instr16.txt")
+#
+# hr_main_url = r'C:\Users\DK\Downloads\2017-opel-combo-109373.pdf'
+# hr_texts = get_texts(hr_main_url, 'hrcombo.txt', False)
+# save_sentences(hr_texts, "output\hr_instr17.txt")
+# english_main_url = r'C:\Users\DK\Downloads\2017-opel-combo-101437.pdf'
+# english_texts = get_texts(english_main_url, 'encombo.txt', False)
+# save_sentences(english_texts, "output\en_instr17.txt")
+#
+# hr_main_url = r'C:\Users\DK\Downloads\2015-opel-meriva-109342.pdf'
+# hr_texts = get_texts(hr_main_url, 'hrmeriva.txt', False)
+# save_sentences(hr_texts, "output\hr_instr18.txt")
+# english_main_url = r'C:\Users\DK\Downloads\2015-opel-meriva-36922.pdf'
+# english_texts = get_texts(english_main_url, 'enmeriva.txt', False)
+# save_sentences(english_texts, "output\en_instr18.txt")
+
+# hr_main_url = r'C:\Users\DK\Downloads\2016-opel-mokka-109384.pdf'
+# hr_texts = get_texts(hr_main_url, 'hrmokka.txt', False)
+# save_sentences(hr_texts, "output\hr_instr19.txt")
+# english_main_url = r'C:\Users\DK\Downloads\2016-opel-mokka-93722.pdf'
+# english_texts = get_texts(english_main_url, 'enmokka.txt', False)
+# save_sentences(english_texts, "output\en_instr19.txt")
+
+# hr_main_url = r'C:\Users\DK\Downloads\2016-opel-movano-109377.pdf'
+# hr_texts = get_texts(hr_main_url, 'hrmovano.txt', False)
+# save_sentences(hr_texts, "output\hr_instr20.txt")
+# english_main_url = r'C:\Users\DK\Downloads\2016-opel-movano-93796.pdf'
+# english_texts = get_texts(english_main_url, 'enmovano.txt', False)
+# save_sentences(english_texts, "output\en_instr20.txt")
+#
+# hr_main_url = r'C:\Users\DK\Downloads\2013-opel-vivaro-109379.pdf'
+# hr_texts = get_texts(hr_main_url, 'hrvivaro.txt', False)
+# save_sentences(hr_texts, "output\hr_instr21.txt")
+# english_main_url = r'C:\Users\DK\Downloads\2013-opel-vivaro-36976.pdf'
+# english_texts = get_texts(english_main_url, 'envivaro.txt', False)
+# save_sentences(english_texts, "output\en_instr21.txt")
+
+# hr_main_url = r'C:\Users\DK\Downloads\2016-citroen-c-elysee-107379.pdf'
+# hr_texts = get_texts(hr_main_url, 'hrelyso.txt', False)
+# save_sentences(hr_texts, "output\hr_instr22.txt")
+# english_main_url = r'C:\Users\DK\Downloads\2016-citroen-c-elysee-106968.pdf'
+# english_texts = get_texts(english_main_url, 'enelysse.txt', False)
+# save_sentences(english_texts, "output\en_instr22.txt")
+
+# hr_main_url = r'C:\Users\DK\Downloads\2013-citroen-c8-107375.pdf'
+# hr_texts = get_texts(hr_main_url, 'hrc8.txt', False)
+# save_sentences(hr_texts, "output\hr_instr23.txt")
+# english_main_url = r'C:\Users\DK\Downloads\2013-citroen-c8-103070.pdf'
+# english_texts = get_texts(english_main_url, 'enc8.txt', False)
+# save_sentences(english_texts, "output\en_instr23.txt")
+#
+# hr_main_url = r'C:\Users\DK\Downloads\2014-citroen-jumper-77549.pdf'
+# hr_texts = get_texts(hr_main_url, 'hrjumper.txt', False)
+# save_sentences(hr_texts, "output\hr_instr24.txt")
+# english_main_url = r'C:\Users\DK\Downloads\2014-citroen-jumper-103097.pdf'
+# english_texts = get_texts(english_main_url, 'enjumper.txt', False)
+# save_sentences(english_texts, "output\en_instr24.txt")
+
+# hr_main_url = r'C:\Users\DK\Downloads\112565.pdf'
+# hr_texts = get_texts(hr_main_url, 'hrp108.txt', False)
+# save_sentences(hr_texts, "output\hr_instr25.txt")
+# english_main_url = r'C:\Users\DK\Downloads\112560.pdf'
+# english_texts = get_texts(english_main_url, 'enp108.txt', False)
+# save_sentences(english_texts, "output\en_instr25.txt")
+
+# hr_main_url = r'C:\Users\DK\Downloads\109990.pdf'
+# hr_texts = get_texts(hr_main_url, 'hrp301.txt', False)
+# save_sentences(hr_texts, "output\hr_instr26.txt")
+# english_main_url = r'C:\Users\DK\Downloads\110842.pdf'
+# english_texts = get_texts(english_main_url, 'enp301.txt', False)
+# save_sentences(english_texts, "output\en_instr26.txt")
+
+hr_main_url = r'C:\Users\DK\Downloads\110513.pdf'
+hr_texts = get_texts(hr_main_url, 'hrcrossland.txt', False)
+save_sentences(hr_texts, "output\hr_instr27.txt")
+english_main_url = r'C:\Users\DK\Downloads\111266.pdf'
+english_texts = get_texts(english_main_url, 'encrossland.txt', False)
+save_sentences(english_texts, "output\en_instr27.txt")
+
+hr_main_url = r'C:\Users\DK\Downloads\110514.pdf'
+hr_texts = get_texts(hr_main_url, 'hrgrandland.txt', False)
+save_sentences(hr_texts, "output\hr_instr28.txt")
+english_main_url = r'C:\Users\DK\Downloads\110521.pdf'
+english_texts = get_texts(english_main_url, 'engrandland.txt', False)
+save_sentences(english_texts, "output\en_instr28.txt")
+
+hr_main_url = r'C:\Users\DK\Downloads\109366.pdf'
+hr_texts = get_texts(hr_main_url, 'hrzafira.txt', False)
+save_sentences(hr_texts, "output\hr_instr29.txt")
+english_main_url = r'C:\Users\DK\Downloads\93731.pdf'
+english_texts = get_texts(english_main_url, 'enzafira.txt', False)
+save_sentences(english_texts, "output\en_instr29.txt")
